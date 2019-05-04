@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">PocketSphinx Demo</string>
+    <string name="app_name">Fire TV Remote</string>
 
     <string name="kws_caption">To start demonstration say \"oh mighty computer\".</string>
     <string name="menu_caption">Say \"digits\", \"forecast\" or \"phones\" to choose the grammar, language model or phonetic decoder example.</string>
@@ -21,4 +21,5 @@
     <string name="play_pause">Play/Pause</string>
     <string name="next">Forward</string>
     <string name="menu">Menu</string>
+    <string name="action_settings">Settings</string>
 </resources>

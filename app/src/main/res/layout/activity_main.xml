@@ -6,131 +6,151 @@
     android:layout_height="match_parent"
     tools:context="edu.cmu.pocketsphinx.remoteapp.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
+    <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
     <LinearLayout
+        android:id="@+id/connectLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical"
         android:gravity="center"
-        android:id="@+id/connectLayout">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/ipAddress"
-            android:layout_width="wrap_content"
+        <ImageButton
+            android:id="@+id/mic_btn"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="IP Address"
-            android:layout_gravity="center"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Connect"
-            android:layout_gravity="left"
-            android:id="@+id/connectBtn"
-            android:onClick="onConnectClick"/>
+            android:background="@drawable/roundedbutton"
+            android:onClick="onClick"
+            android:layout_marginBottom="30dp"
+            app:srcCompat="@drawable/mic_btn" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/up"
-            android:id="@+id/up_btn"
-            android:onClick="onClick"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <RelativeLayout android:layout_width="150dp"
+            android:layout_height="150dp">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/roundedbutton" />
             <Button
+                android:id="@+id/up_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/left"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:background="#00000000"
+                android:onClick="onClick"/>
+            <Button
                 android:id="@+id/left_btn"
+                android:layout_width="30dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:background="#00000000"
                 android:onClick="onClick"/>
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/enter"
-                android:id="@+id/enter_btn"
-                android:onClick="onClick"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/right"
                 android:id="@+id/right_btn"
+                android:layout_width="30dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
                 android:onClick="onClick"/>
-        </LinearLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/down"
-            android:id="@+id/down_btn"
-            android:onClick="onClick"/>
+            <Button
+                android:id="@+id/down_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:background="#00000000"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:id="@+id/enter_btn"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/roundedmenubutton"
+                android:onClick="onClick"/>
+
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="@string/prev"
-                android:id="@+id/prev_btn"
-                android:onClick="onClick"/>
-            <Button
-                android:layout_width="wrap_content"
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                android:layout_marginRight="30dp"
+                app:srcCompat="@drawable/ic_action_name"
+                />
+
+            <ImageButton
+                android:id="@+id/home_btn"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="@string/play_pause"
-                android:id="@+id/play_pause_btn"
-                android:onClick="onClick"/>
-            <Button
-                android:layout_width="wrap_content"
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/home_btn" />
+
+            <ImageButton
+                android:id="@+id/menu_btn"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="@string/next"
-                android:id="@+id/next_btn"
-                android:onClick="onClick"/>
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/menu_btn" />
         </LinearLayout>
-        <Button
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home"
-            android:id="@+id/home_btn"
-            android:onClick="onClick"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:id="@+id/back_btn"
-            android:onClick="onClick"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/menu"
-            android:id="@+id/menu_btn"
-            android:onClick="onClick"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <ImageButton
+                android:id="@+id/prev_btn"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                android:layout_marginRight="30dp"
+                app:srcCompat="@drawable/prev_btn"/>
+
+            <ImageButton
+                android:id="@+id/play_pause_btn"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/play__pause_btn"/>
+
+            <ImageButton
+                android:id="@+id/next_btn"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedbutton"
+                android:onClick="onClick"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/next_btn"/>
+        </LinearLayout>
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
