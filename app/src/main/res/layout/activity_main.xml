@@ -29,25 +29,21 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
 
             <ImageButton
                 android:id="@+id/mic_btn"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
                 android:background="@drawable/roundedbutton"
                 android:onClick="onClick"
                 app:srcCompat="@drawable/mic_btn" />
 
-            <ImageButton
-                android:id="@+id/alexa_btn"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/roundedbutton"
-                android:onClick="onClick"
-                app:srcCompat="@drawable/alexa_icon_btn" />
+            <Spinner
+                android:id="@+id/search_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <RelativeLayout
